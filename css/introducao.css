@@ -1,0 +1,60 @@
+.introducao {
+  max-width: 1200px; /*Para manter o padrão te tamanho máximo de 1200px */
+  padding: 40px 20px; /* Para desgrudar */
+  margin: 0 auto; /*Alinhamento central*/
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Ou pode colotar "4fr 8fr" que corersponde as colunas do figma */
+  gap: 100px; /*Distância da foto */
+  align-items: center; /*Alinhar ao centro da foto */
+}
+
+.introducao h1 {
+  font-size: 4.5rem;
+  line-height: 1.125;
+  margin-bottom: 30px;
+  position: relative; /* Para o "detalhe" usar esse como base */
+}
+
+.introducao h1::before {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url("/img/detalhe.svg") no-repeat center;
+  position: absolute;
+  top: -30px;
+  left: -65px;
+  z-index: -1;
+}
+
+@media (max-width: 1000px) {
+  .introducao h1 {
+    font-size: 3rem;
+  }
+  .introducao h1::before {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .introducao h1 {
+    font-size: 3rem;
+  }
+  .introducao h1::before {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .introducao {
+    grid-template-columns: 1fr;
+  }
+
+  .introducao img {
+    display: none;
+  }
+}
